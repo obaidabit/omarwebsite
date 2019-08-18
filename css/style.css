@@ -45,7 +45,7 @@ button span{
 
 #bigimg{
     background: rgba(0, 0, 0, 0.3);
-    background-image: url(../img/flowers.jpg);
+    background-image: url(../img/optimized/flowers.jpg);
     background-size: cover;
     background-position: -1px 0px!important;
     background-repeat: no-repeat;
