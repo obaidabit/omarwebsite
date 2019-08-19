@@ -38,8 +38,8 @@ $(document).ready(function () {
         "http://localhost:5500/img/optimized/_MG_2489.jpg"
     ];
     $("#hero a img").click(function () {
-        img = $(this)[0];
-        let i = imgarrop.indexOf(img.src);
+        img = $(this);
+        let i = img.attr("data-index");
         oldImg = $(".modal-content .image img")[0];
         newImg = new Image();
         if (oldImg !== undefined) {
