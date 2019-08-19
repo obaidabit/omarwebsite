@@ -64,7 +64,7 @@ $(document).ready(function () {
         newImg.src = imgarr[++i];
         $(".modal-content .image img").replaceWith(newImg);
         e.preventDefault();
-        console.log(i);
+        console.log(newImg.src);
 
     });
 
@@ -77,7 +77,7 @@ $(document).ready(function () {
         $(".modal-content .image img").replaceWith(newImg);
         newImg.src = imgarr[--i];
         e.preventDefault();
-        console.log(i);
+        console.log(newImg.src);
     });
 
     $("#contact a:first").click(function (e) {
