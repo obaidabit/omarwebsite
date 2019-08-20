@@ -38,44 +38,53 @@ $(document).ready(function () {
         "http://localhost:5500/img/optimized/_MG_2489.jpg"
     ];
     $("#hero a img").click(function () {
-        img = $(this);
-        let i = img.attr("data-index");
+        img = $(this)[0];
+        let q = img.getAttribute("data-index");
         oldImg = $(".modal-content .image img")[0];
         newImg = new Image();
+        newImg.setAttribute("data-index", q);
         if (oldImg !== undefined) {
             if (img.src === oldImg.src) {
 
             } else {
-                newImg.src = imgarr[i];
+                newImg.src = img.src;
                 $(".modal-content .image img").replaceWith(newImg);
             }
         } else {
-            newImg.src = imgarr[i];
+            newImg.src = img.src;
             $(".modal-content .image").append(newImg);
         }
     });
 
     $("#next").click(function (e) {
-        oldImg = $(".modal-content .image img")[0];
-        let i = imgarr.indexOf(oldImg.src);
-        if (i >= imgarr.length - 1) {
+        oldImg = $(".modal-content .image img");
+        let i = oldImg.attr("data-index");
+        if (i >= imgarrop.length - 1) {
             i = -1;
         }
-        newImg.src = imgarr[++i];
+        ++i;
+        let temp = $("[data-index='" + i + "']")[0];
+        console.log(temp);
+        newImg.src = temp.src;
         $(".modal-content .image img").replaceWith(newImg);
+        newImg.setAttribute("data-index", i);
         e.preventDefault();
         console.log(newImg.src);
 
     });
 
     $("#prev").click(function (e) {
-        oldImg = $(".modal-content .image img")[0];
-        let i = imgarr.indexOf(oldImg.src);
+        oldImg = $(".modal-content .image img");
+        let i = oldImg.attr("data-index");
         if (i <= 0) {
-            i = imgarr.length;
+            i = imgarrop.length;
         }
+        --i;
+        let temp = $("[data-index='" + i + "']")[0];
+        console.log(temp);
+        newImg.src = temp.src;
         $(".modal-content .image img").replaceWith(newImg);
-        newImg.src = imgarr[--i];
+        newImg.setAttribute("data-index", i);
         e.preventDefault();
         console.log(newImg.src);
     });
