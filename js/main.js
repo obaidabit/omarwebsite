@@ -10,6 +10,20 @@ if (window.innerHeight >= 1024 && (window.innerWidth <= 1024)) {
 $(document).ready(function () {
     var img, oldImg, newImg;
 
+    var imgarrop = ["http://localhost:5500/img/optimized/flowers.jpg",
+        "http://localhost:5500/img/optimized/_MG_4956.jpg",
+        "http://localhost:5500/img/optimized/IMG_2305-Edit.jpg",
+        "http://localhost:5500/img/optimized/20171203_164858.jpg",
+        "http://localhost:5500/img/optimized/IMG_3672.jpg",
+        "http://localhost:5500/img/optimized/20180811_192427-17.jpg",
+        "http://localhost:5500/img/optimized/20180814_063005-26.jpg",
+        "http://localhost:5500/img/optimized/water.jpg",
+        "http://localhost:5500/img/optimized/Untitled_Panorama1.jpg",
+        "http://localhost:5500/img/optimized/_MG_5806.jpg",
+        "http://localhost:5500/img/optimized/20180809_192416-14.jpg",
+        "http://localhost:5500/img/optimized/_MG_2475.jpg",
+        "http://localhost:5500/img/optimized/_MG_2489.jpg"
+    ];
     $("#hero a img").click(function () {
         img = $(this)[0];
         let q = img.getAttribute("data-index");
