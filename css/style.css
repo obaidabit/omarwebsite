@@ -169,6 +169,7 @@ button span{
     }
     .logolink{
         width: 50%;
+        max-height: 2.5em;
         float: left;
     }
 
